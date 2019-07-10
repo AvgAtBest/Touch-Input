@@ -6,7 +6,7 @@ public class BallController : MonoBehaviour
 {
 
 
-	public float speed = 5f;
+	public float speed = 15f;
 	public float verticleMove;
 	public float horizontalMove;
 
