@@ -21,18 +21,29 @@ public class PaddleController : MonoBehaviour
 	{
 		
 		horizontalMove = JoyStickInput();
+
+		//horizontalMove = KeyboardInput();
 		rigid.AddForce(horizontalMove, ForceMode2D.Impulse);
 	}
 	Vector2 JoyStickInput()
 	{
 		Vector2 inputDirection = joystick.GetAxis();
 		Vector2 newPos = Vector2.zero;
-		newPos.x = inputDirection.x;
+		newPos.x = inputDirection.x * speed;
 		newPos.y = inputDirection.y;
 		Debug.Log("Joystick" + joystick.input.x);
 
 		return newPos;
 
 	}
+	//Vector2 KeyboardInput()
+	//{
+	//	float inputH = Input.GetAxisRaw("Horizontal");
+
+	//	Vector2 newPos = Vector2.zero;
+	//	newPos.x = inputH * speed;
+
+	//	return newPos;
+	//}
 
 }

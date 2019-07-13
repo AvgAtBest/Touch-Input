@@ -18,5 +18,6 @@ public class Bounds : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		collision.GetComponent<BallController>().Respawn_Ball_Default();
+		FindObjectOfType<Brick_Handler>().ResetBricks();
 	}
 }
