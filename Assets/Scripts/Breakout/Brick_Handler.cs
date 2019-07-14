@@ -9,6 +9,8 @@ public class Brick_Handler : MonoBehaviour
 	public int columns;
 	public float spacing;
 	public GameObject brickPrefab;
+	public GameObject[] brickPrefabs;
+	//public List<GameObject> brickPrefabs = new List<GameObject>();
 	public List<GameObject> spawnedBricks = new List<GameObject>();
 	public Sprite[] sprites;
 	private void Start()
@@ -30,16 +32,17 @@ public class Brick_Handler : MonoBehaviour
 		{
 			for(int y = 0; y < rows; y++)
 			{
+				int prefabNumber = Random.Range(0, brickPrefabs.Length - 1);
 				Vector2 spawnPos = (Vector2)transform.position + new Vector2(
-					x * (brickPrefab.transform.localScale.x + spacing),
-					-y * (brickPrefab.transform.localScale.y + spacing));
-				GameObject brick = Instantiate(brickPrefab, spawnPos, Quaternion.identity);
+					x * (brickPrefabs[prefabNumber].transform.localScale.x + spacing),
+					-y * (brickPrefabs[prefabNumber].transform.localScale.y + spacing));
+				GameObject brick = Instantiate(brickPrefabs[prefabNumber], spawnPos, Quaternion.identity);
 				spawnedBricks.Add(brick);
-				for (int s = 0; s < sprites.Length; s++)
-				{
-					int spriteNumber = Random.Range(0, sprites.Length - 1);
-					brick.gameObject.GetComponent<SpriteRenderer>().sprite = sprites[spriteNumber];
-				}
+				//for (int s = 0; s < sprites.Length; s++)
+				//{
+				//	int spriteNumber = Random.Range(0, sprites.Length - 1);
+				//	brick.gameObject.GetComponent<SpriteRenderer>().sprite = sprites[spriteNumber];
+				//}
 			}
 		}
 	}

@@ -23,7 +23,8 @@ public class PaddleController : MonoBehaviour
 		horizontalMove = JoyStickInput();
 
 		//horizontalMove = KeyboardInput();
-		rigid.AddForce(horizontalMove, ForceMode2D.Impulse);
+		//rigid.AddForce(horizontalMove, ForceMode2D.Impulse);
+		rigid.velocity = Vector2.right * horizontalMove * speed;
 	}
 	Vector2 JoyStickInput()
 	{

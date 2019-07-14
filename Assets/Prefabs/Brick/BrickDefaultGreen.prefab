@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2026482736632772053}
   - component: {fileID: 7623990671820100376}
   - component: {fileID: 3773848519916468216}
+  - component: {fileID: 3840255644009710511}
   m_Layer: 0
   m_Name: BrickDefaultGreen
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5316955153338959665}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 15, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a7bd73527c30f5f4c82429f3cb68bade, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ff71b20afe23fc4ba9ee2a79c1a00c5, type: 3}
   m_Color: {r: 0.19744569, g: 0.8207547, b: 0.32387552, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,3 +107,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &3840255644009710511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5316955153338959665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737d9555b95744f468e998399a64f756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 8ff71b20afe23fc4ba9ee2a79c1a00c5, type: 3}
+  - {fileID: 21300002, guid: 8ff71b20afe23fc4ba9ee2a79c1a00c5, type: 3}
+  health: 2
+  curHealth: 0
