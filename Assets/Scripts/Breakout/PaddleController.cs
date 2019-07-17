@@ -28,7 +28,7 @@ public class PaddleController : MonoBehaviour
     {
       horizontalMove = JoyStickInput();
     }
-    if (Input.GetAxis("Horizontal") != 0)
+    else if (Input.GetAxis("Horizontal") != 0)
     {
       horizontalMove = new Vector2(Input.GetAxis("Horizontal"), 0) * keyboardSpeed;
     }
