@@ -122,3 +122,6 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: a7bd73527c30f5f4c82429f3cb68bade, type: 3}
   - {fileID: 21300002, guid: a7bd73527c30f5f4c82429f3cb68bade, type: 3}
+  health: 2
+  curHealth: 0
+  powerup: {fileID: 3985746882801482681, guid: 007a5d8d5419f0c4197173f0c51bc1c5, type: 3}
