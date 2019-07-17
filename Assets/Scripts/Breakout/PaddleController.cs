@@ -9,9 +9,11 @@ public class PaddleController : MonoBehaviour
 	public float speed = 1f;
 	public Vector2 horizontalMove;
 	public Rigidbody2D rigid;
+	public Vector2 startPos;
 	// Start is called before the first frame update
 	void Start()
 	{
+		startPos = gameObject.transform.position;
 		//joystick = GetComponent<VariableJoystick>();
 		rigid = this.GetComponent<Rigidbody2D>();
 		rigid.isKinematic = false;
@@ -21,10 +23,8 @@ public class PaddleController : MonoBehaviour
 	{
 		
 		horizontalMove = JoyStickInput();
-
-		//horizontalMove = KeyboardInput();
-		//rigid.AddForce(horizontalMove, ForceMode2D.Impulse);
 		rigid.velocity = Vector2.right * horizontalMove * speed;
+
 	}
 	Vector2 JoyStickInput()
 	{
@@ -37,14 +37,11 @@ public class PaddleController : MonoBehaviour
 		return newPos;
 
 	}
-	//Vector2 KeyboardInput()
-	//{
-	//	float inputH = Input.GetAxisRaw("Horizontal");
 
-	//	Vector2 newPos = Vector2.zero;
-	//	newPos.x = inputH * speed;
-
-	//	return newPos;
-	//}
-
+	public void ResetPaddle()
+	{
+		horizontalMove = Vector2.zero;
+		rigid.velocity = Vector2.zero;
+		gameObject.transform.position = startPos;
+	}
 }
