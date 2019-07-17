@@ -15,6 +15,7 @@ public class Brick_Handler : MonoBehaviour
 	public List<GameObject> spawnedBricks = new List<GameObject>();
 	public Sprite[] sprites;
 	public GameObject winUI;
+
 	private void Start()
 	{
 		ResetBricks();
@@ -51,7 +52,7 @@ public class Brick_Handler : MonoBehaviour
 					x * (brickPrefabs[prefabNumber].transform.localScale.x + spacing),
 					-y * (brickPrefabs[prefabNumber].transform.localScale.y + spacing));
 				//spawns the brick at the spawn position
-				GameObject brick = Instantiate(brickPrefabs[prefabNumber], spawnPos, Quaternion.identity);
+				GameObject brick = Instantiate(brickPrefabs[prefabNumber], spawnPos, Quaternion.identity, transform);
 				//adds the brick to the list
 				spawnedBricks.Add(brick);
 

@@ -5,11 +5,15 @@ using UnityEngine;
 public class Brick : MonoBehaviour
 {
 	public Sprite[] sprites;
+
 	public int health = 2;
 	public int curHealth;
-	SpriteRenderer thisBrick;
+
+  SpriteRenderer thisBrick;
 	ScoreManager score;
-	// Start is called before the first frame update
+
+  public GameObject powerup;
+  // Start is called before the first frame update
 	public void Start()
 	{
 		score = GameObject.Find("Game").GetComponent<ScoreManager>();
@@ -37,8 +41,24 @@ public class Brick : MonoBehaviour
 			Brick_Handler th = FindObjectOfType<Brick_Handler>().GetComponent<Brick_Handler>();
 			score.AddScore(100);
 			th.spawnedBricks.Remove(gameObject);
-			Destroy(gameObject);
 
+      if (powerup)
+      {
+        System.Random rnd = new System.Random();
+        int effect = rnd.Next(2);
+
+        switch (effect)
+        {
+          case 0:
+            print("Powerup spawned");
+            Instantiate(powerup, transform.position, transform.rotation);
+            break;
+          default:
+            break;
+        }
+      }
+
+      Destroy(gameObject);
 		}
 	}
 }

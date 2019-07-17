@@ -124,3 +124,4 @@ MonoBehaviour:
   - {fileID: 21300002, guid: 8ff71b20afe23fc4ba9ee2a79c1a00c5, type: 3}
   health: 2
   curHealth: 0
+  powerup: {fileID: 3985746882801482681, guid: 007a5d8d5419f0c4197173f0c51bc1c5, type: 3}
