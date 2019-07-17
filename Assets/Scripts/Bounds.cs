@@ -13,6 +13,7 @@ public class Bounds : MonoBehaviour
     }
     else
     {
+			//destroy the ball
       Destroy(collision.gameObject);
     }
 	}

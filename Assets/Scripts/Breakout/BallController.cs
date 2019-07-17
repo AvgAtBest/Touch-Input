@@ -32,7 +32,7 @@ public class BallController : MonoBehaviour
     //call game over function
     FindObjectOfType<GameManager>().GameOver();
   }
-
+	//changes the speed of the balls rigidbody velocity timed by the multiplier via powerup
   public void ChangeSpeed(float multiplier)
   {
     GetComponent<Rigidbody2D>().velocity *= multiplier;

@@ -61,7 +61,9 @@ public class Brick_Handler : MonoBehaviour
 	}
 	public void WinUI()
 	{
+		//sets the victory ui on
 		winUI.SetActive(true);
+		//freezes time
 		Time.timeScale = 0f;
 	}
 }

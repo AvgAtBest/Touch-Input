@@ -26,15 +26,7 @@ public class GameManager : MonoBehaviour
 	}
 	public void ResetGame()
 	{
-		////Resets everything in game
-		//FindObjectOfType<Brick_Handler>().ResetBricks();
-		//FindObjectOfType<PaddleController>().ResetPaddle();
-		//FindObjectOfType<BallController>().Respawn_Ball_Default();
-		//FindObjectOfType<ScoreManager>().ResetScore();
-		//gameoverPanel.SetActive(false);
-		//winUiPanel.SetActive(false);
-		//pauseUIPanel.SetActive(false);
-		//gameover = false;
+		//reloads the scene and unfreezes time
 		Time.timeScale = 1f;
 
     SceneManager.LoadScene(1);
